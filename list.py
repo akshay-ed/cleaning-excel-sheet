@@ -1,5 +1,7 @@
+# A simple program to download list of local training providers for an occupation, area and state. 
+
 import pandas as pd
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup #Can add pagination using beautiful soup. Refer to data scraping file from 
 import requests
 
 occ1='Medical'
@@ -14,9 +16,3 @@ dfs=pd.read_html(web_page)
 df=dfs[0]
 name=occ1+occ2+area+state+page+'.xlsx'
 df.to_excel(name)
-
-
-# Make a GET request to fetch the raw HTML content, Parse the html content
-# html_content = requests.get(web_page).text
-# soup = BeautifulSoup(html_content, "lxml")
-# print(soup.prettify()) # print the parsed data of html
